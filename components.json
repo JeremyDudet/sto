@@ -8,6 +8,7 @@
     "tsx": "true"
   },
   "aliases": {
-    "utils": "@/src/lib/utils"
+    "utils": "@/lib/utils",
+    "components": "@/components"
   }
 }
