@@ -5,7 +5,8 @@ import { type AppType } from "next/app";
 import { api } from "@/utils/api";
 
 import "@/styles/globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+import ThemeProvider from "@/components/theme-provider";
+import { SiteHeader } from "@/components/SiteHeader";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -19,7 +20,13 @@ const MyApp: AppType<{ session: Session | null }> = ({
         enableSystem
         disableTransitionOnChange
       >
-        <Component {...pageProps} />
+        <div className="relative flex min-h-screen flex-col">
+          <SiteHeader />
+          <div className="flex-1">
+            <Component {...pageProps} />
+          </div>
+          {/* <SiteFooter /> */}
+        </div>
       </ThemeProvider>
     </SessionProvider>
   );
