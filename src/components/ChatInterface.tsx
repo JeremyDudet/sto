@@ -3,28 +3,41 @@ import React from "react";
 
 const ChatInterface: React.FC = () => {
   return (
-    <div className="flex h-screen flex-col bg-gray-100">
-      <div className="bg-purple-500 p-4 text-xl font-semibold text-white">
+    <div className="flex h-screen flex-col bg-gray-200">
+      {/* Top Bar */}
+      <div className="border-b bg-white p-4 text-xl font-semibold text-gray-800">
         Chat with us
       </div>
+
+      {/* Chat Area */}
       <div className="flex-1 space-y-4 overflow-y-auto p-4">
-        {/* Sample chat messages */}
-        <div className="max-w-md rounded-lg bg-pink-100 p-4">
+        {/* User Message */}
+        <div className="max-w-md rounded-lg bg-gray-300 p-4">
           {`I should have received a refund for my purchase, but I'm waiting 3
           days already and nothing`}
         </div>
-        <div className="ml-auto max-w-md rounded-lg bg-blue-100 p-4">
+
+        {/* Bot/Support Response */}
+        <div className="ml-auto max-w-md rounded-lg bg-purple-500 p-4 text-white">
           {`I apologize for any inconvenience you've experienced with your
           refund...`}
         </div>
-        {/* You can map over chat messages and render them here */}
+
+        {/* Add more chat messages as needed */}
       </div>
-      <div className="border-t bg-white p-4">
-        <input
-          type="text"
-          className="w-full rounded-lg border p-2"
-          placeholder="Type a question..."
-        />
+
+      {/* Input Field */}
+      <div className="border-t bg-gray-100 p-4">
+        <div className="flex items-center space-x-4 rounded-lg bg-white shadow">
+          <button className="p-3">
+            <img src="/path-to-icon.png" alt="Optional Icon" />
+          </button>
+          <input
+            type="text"
+            className="flex-1 rounded-lg border-0 py-2 pr-4 outline-none"
+            placeholder="Type a question..."
+          />
+        </div>
       </div>
     </div>
   );
