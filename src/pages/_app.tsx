@@ -7,6 +7,7 @@ import { api } from "@/utils/api";
 import "@/styles/globals.css";
 import ThemeProvider from "@/components/theme-provider";
 import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
 
 const MyApp: AppType<{ session: Session | null }> = ({
   Component,
@@ -20,12 +21,12 @@ const MyApp: AppType<{ session: Session | null }> = ({
         enableSystem
         disableTransitionOnChange
       >
-        <div className="relative flex min-h-screen flex-col">
+        <div className="flex h-screen flex-col ">
           <SiteHeader />
-          <div className="flex-1">
+          <div className="flex h-full flex-col justify-center">
             <Component {...pageProps} />
           </div>
-          {/* <SiteFooter /> */}
+          <SiteFooter />
         </div>
       </ThemeProvider>
     </SessionProvider>
